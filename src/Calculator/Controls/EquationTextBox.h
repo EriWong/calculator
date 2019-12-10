@@ -34,7 +34,7 @@ namespace CalculatorApp
             Platform::String^ GetEquationText();
             void SetEquationText(Platform::String^ equationText);
 
-            void InsertText(Platform::String ^ text);
+            void InsertText(Platform::String ^ text, int cursorOffSet);
 
         protected:
             virtual void OnApplyTemplate() override;
@@ -82,9 +82,6 @@ namespace CalculatorApp
 
             bool m_isPointerOver;
             bool m_isColorChooserFlyoutOpen;
-
-            Platform::String ^ GetText();
-            void SetText(Platform::String ^ text);
         };
     }
 }

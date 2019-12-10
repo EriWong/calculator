@@ -4,6 +4,7 @@
 #include "pch.h"
 #include "GraphingNumPad.xaml.h"
 #include "Views/NumberPad.xaml.h"
+#include "Controls/CalculatorButton.h"
 
 using namespace CalculatorApp;
 
@@ -52,8 +53,6 @@ void GraphingNumPad::FlyoutButton_Clicked(_In_ Platform::Object ^ /*sender*/, _I
     this->Trigflyout->Hide();
     this->FuncFlyout->Hide();
     this->InequalityFlyout->Hide();
-
-    this->m_targetEIA->ETB->InsertText(L"1");
 }
 
 void GraphingNumPad::ShiftButton_IsEnabledChanged(_In_ Platform::Object ^ /*sender*/, _In_ Windows::UI::Xaml::DependencyPropertyChangedEventArgs ^ /*e*/)
@@ -87,6 +86,12 @@ void GraphingNumPad::SetTrigRowVisibility()
     {
         TrigFunctions->Visibility = ::Visibility::Visible;
     }
+}
+
+void CalculatorApp::GraphingNumPad::Button_Clicked(Platform::Object ^ sender, Windows::UI::Xaml::DependencyPropertyChangedEventArgs ^ e)
+{
+    auto button = dynamic_cast<CalculatorApp::Controls::CalculatorButton^>(sender);
+    
 }
 
 void GraphingNumPad::SetOperatorRowVisibility()

@@ -1167,7 +1167,7 @@
                                        Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
                                        FontFamily="{StaticResource SymbolThemeFontFamily}"
                                        AutomationProperties.AutomationId="submitButton"
-                                       ButtonId="Equals"
+                                       ButtonId="Submit"
                                        Content="&#xE751;"/>
         </Grid>
 
