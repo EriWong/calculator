@@ -25,6 +25,14 @@ namespace CalculatorApp
         OBSERVABLE_PROPERTY_RW(Windows::Foundation::Collections::IObservableVector<Windows::UI::Xaml::Media::SolidColorBrush ^> ^, AvailableColors);
         event Windows::UI::Xaml::RoutedEventHandler ^ KeyGraphFeaturesRequested;
 
+        property Controls::EquationTextBox
+            ^ ETB {
+            Controls::EquationTextBox ^ get()
+            {
+                return m_EquationTextBox;
+            }
+        }
+
     private:
         void OnPropertyChanged(Platform::String^ propertyName);
         void OnEquationsPropertyChanged();
@@ -39,7 +47,6 @@ namespace CalculatorApp
         void OnHighContrastChanged(Windows::UI::ViewManagement::AccessibilitySettings ^ sender, Platform::Object ^ args);
         void ReloadAvailableColors(bool isHighContrast);
 
-    private:
         Windows::UI::ViewManagement::AccessibilitySettings ^ m_accessibilitySettings;
         int m_lastLineColorIndex;
         int m_lastFunctionLabelIndex;
@@ -47,5 +54,6 @@ namespace CalculatorApp
         void EquationTextBox_KeyGraphFeaturesButtonClicked(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
         void EquationTextBox_EquationButtonClicked(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
         void EquationTextBoxLoaded(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
+        Controls::EquationTextBox ^ m_EquationTextBox;
     };
 }

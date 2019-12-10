@@ -52,6 +52,8 @@ void GraphingNumPad::FlyoutButton_Clicked(_In_ Platform::Object ^ /*sender*/, _I
     this->Trigflyout->Hide();
     this->FuncFlyout->Hide();
     this->InequalityFlyout->Hide();
+
+    this->m_targetEIA->ETB->InsertText(L"1");
 }
 
 void GraphingNumPad::ShiftButton_IsEnabledChanged(_In_ Platform::Object ^ /*sender*/, _In_ Windows::UI::Xaml::DependencyPropertyChangedEventArgs ^ /*e*/)

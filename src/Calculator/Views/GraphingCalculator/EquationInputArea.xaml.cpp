@@ -76,6 +76,8 @@ void EquationInputArea::AddNewEquation()
 
 void EquationInputArea::InputTextBox_GotFocus(Object ^ sender, RoutedEventArgs ^ e)
 {
+    m_EquationTextBox = static_cast<EquationTextBox ^>(sender);
+    auto eq = static_cast<EquationViewModel ^>(m_EquationTextBox->DataContext);
     KeyboardShortcutManager::HonorShortcuts(false);
 }
 
@@ -142,6 +144,7 @@ void EquationInputArea::EquationTextBox_EquationButtonClicked(Object ^ sender, R
 
 void EquationInputArea::EquationTextBoxLoaded(Object ^ sender, RoutedEventArgs ^ e)
 {
+    m_EquationTextBox = static_cast<EquationTextBox ^>(sender);
     auto tb = static_cast<EquationTextBox ^>(sender);
     auto eq = static_cast<EquationViewModel ^>(tb->DataContext);
 

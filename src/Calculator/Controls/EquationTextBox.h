@@ -34,6 +34,8 @@ namespace CalculatorApp
             Platform::String^ GetEquationText();
             void SetEquationText(Platform::String^ equationText);
 
+            void InsertText(Platform::String ^ text);
+
         protected:
             virtual void OnApplyTemplate() override;
             virtual void OnPointerEntered(Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e) override;
@@ -80,6 +82,9 @@ namespace CalculatorApp
 
             bool m_isPointerOver;
             bool m_isColorChooserFlyoutOpen;
+
+            Platform::String ^ GetText();
+            void SetText(Platform::String ^ text);
         };
     }
 }

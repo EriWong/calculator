@@ -342,6 +342,42 @@ void EquationTextBox::SetEquationText(Platform::String ^ equationText)
     }
 }
 
+void EquationTextBox::InsertText(Platform::String ^ text)
+{
+    //// the following indices are with respect to the text variable, but NOT the TextBox.Text property!
+    // int currentSelectionStart = box.SelectionStart;
+    // int currentSelectionLength = box.SelectionLength;
+
+    //// if text is selected, delete it
+    // if (currentSelectionLength != 0)
+    //    text = text.Remove(currentSelectionStart, currentSelectionLength);
+
+    //// insert the new character
+    // box.Text = text.Insert(currentSelectionStart, (string)arg);
+    // box.SelectionLength = 0;
+    // box.SelectionStart = currentSelectionStart + 1; // move the cursor to behind the new character(s in case of return)
+
+    // Insert text at the current cursor location
+    auto s_start = m_richEditBox->TextDocument->Selection->StartPosition;
+    auto s_len = m_richEditBox->TextDocument->Selection->Length;
+    // auto s_end = m_richEditBox->TextDocument->Selection->EndPosition;
+
+    String ^ currentText = GetText();
+    std::wstring _text = currentText->Data();
+    if (s_len > 0)
+    {
+        // Delete the current selection
+        _text.erase(s_start, s_len);
+    }
+
+    _text.insert(s_start, text->Data());
+
+    String ^ newText = ref new Platform::String(_text.c_str());
+    SetText(newText);
+    m_richEditBox->TextDocument->Selection->StartPosition += 1;
+    m_richEditBox->TextDocument->Selection->EndPosition = m_richEditBox->TextDocument->Selection->StartPosition;
+}
+
 bool EquationTextBox::RichEditHasContent()
 {
     String ^ text;
@@ -358,5 +394,37 @@ void EquationTextBox::OnRichEditMenuOpening(Object ^ /*sender*/, Object ^ /*args
     if (m_kgfEquationMenuItem != nullptr)
     {
         m_kgfEquationMenuItem->IsEnabled = EquationTextBox::RichEditHasContent();
+    }
+}
+
+Platform::String ^ EquationTextBox::GetText()
+{
+    String ^ text;
+    if (m_richEditBox != nullptr)
+    {
+        // Clear formatting since the graph control doesn't work with bold/italic/underlines
+        ITextRange ^ range = m_richEditBox->TextDocument->GetRange(0, m_richEditBox->TextDocument->Selection->EndPosition);
+
+        if (range != nullptr)
+        {
+            range->CharacterFormat->Bold = FormatEffect::Off;
+            range->CharacterFormat->Italic = FormatEffect::Off;
+            range->CharacterFormat->Underline = UnderlineType::None;
+        }
+
+        Windows::UI::Text::TextGetOptions options = Windows::UI::Text::TextGetOptions::None;
+        m_richEditBox->TextDocument->GetText(options, &text);
+    }
+
+    return text;
+}
+
+void EquationTextBox::SetText(Platform::String ^ text)
+{
+    if (m_richEditBox != nullptr)
+    {
+        Windows::UI::Text::TextSetOptions options = Windows::UI::Text::TextSetOptions::None;
+        m_richEditBox->TextDocument->SetText(options, text);
+        EquationSubmitted(this, ref new RoutedEventArgs());
     }
 }

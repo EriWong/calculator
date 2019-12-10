@@ -5,6 +5,7 @@
 
 #include "Views\GraphingCalculator\GraphingNumPad.g.h"
 #include "CalcViewModel/GraphingCalculator/GraphingCalculatorViewModel.h"
+#include "Views/GraphingCalculator/EquationInputArea.xaml.h"
 
 namespace CalculatorApp
 {
@@ -13,6 +14,19 @@ namespace CalculatorApp
 	{
 	public:
 		GraphingNumPad();
+
+        property EquationInputArea ^ TargetEIA
+        {
+            EquationInputArea^ get()
+            {
+                return m_targetEIA;
+            }
+
+            void set(EquationInputArea ^ value)
+            {
+                m_targetEIA = value;
+            }
+        }
 
     private:
         void ShiftButton_Check(_In_ Platform::Object ^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs ^ e);
@@ -23,5 +37,8 @@ namespace CalculatorApp
         void ShiftButton_IsEnabledChanged(_In_ Platform::Object ^ sender, _In_ Windows::UI::Xaml::DependencyPropertyChangedEventArgs ^ e);
         void SetOperatorRowVisibility();
         void SetTrigRowVisibility();
+
+        EquationInputArea ^ m_targetEIA;
+        //void OnDataContextChanged(Windows::UI::Xaml::FrameworkElement ^ sender, Windows::UI::Xaml::DataContextChangedEventArgs ^ args);
 	};
 }

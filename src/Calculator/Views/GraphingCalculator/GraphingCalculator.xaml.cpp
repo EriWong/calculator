@@ -110,6 +110,8 @@ void GraphingCalculator::GraphingCalculator_DataContextChanged(FrameworkElement 
 
     m_variableUpdatedToken = ViewModel->VariableUpdated +=
         ref new EventHandler<VariableChangedEventArgs>(this, &CalculatorApp::GraphingCalculator::OnVariableChanged);
+
+    GraphingNumberPad->TargetEIA = EquationInputAreaControl;
 }
 
 void GraphingCalculator::OnEquationsVectorChanged(IObservableVector<EquationViewModel ^> ^ sender, IVectorChangedEventArgs ^ event)
