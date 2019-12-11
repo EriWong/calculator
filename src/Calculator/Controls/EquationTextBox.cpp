@@ -346,8 +346,9 @@ void EquationTextBox::SetEquationText(Platform::String ^ equationText)
 void EquationTextBox::InsertText(Platform::String ^ text, int cursorOffSet)
 {
     // If the rich edit is empty, the math zone may not exist, and so selection (and thus the resulting text) will not be in a math zone.
-    // If the rich edit has content already, then the mathzone will already be created due to mathonly mode being set and the selection will exist inside the math zone.
-    // To handle this, we will force a math zone to be created in teh case of the text being empty and then replacing the text inside of the math zone with the newly inserted text.
+    // If the rich edit has content already, then the mathzone will already be created due to mathonly mode being set and the selection will exist inside the
+    // math zone. To handle this, we will force a math zone to be created in teh case of the text being empty and then replacing the text inside of the math
+    // zone with the newly inserted text.
     if (m_richEditBox->MathText == nullptr)
     {
         m_richEditBox->MathText = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi></math>";
@@ -363,9 +364,29 @@ void EquationTextBox::InsertText(Platform::String ^ text, int cursorOffSet)
     m_richEditBox->TextDocument->Selection->EndPosition = m_richEditBox->TextDocument->Selection->StartPosition;
 }
 
-void EquationTextBox::SubmitEq()
+void EquationTextBox::SubmitEquation()
 {
     EquationSubmitted(this, ref new RoutedEventArgs());
+}
+
+void EquationTextBox::BackSpace()
+{
+    // if anything is selected, just delete the selection
+    if (m_richEditBox->TextDocument->Selection->Length > 0)
+    {
+        m_richEditBox->TextDocument->Selection->SetText(Windows::UI::Text::TextSetOptions::None, L"");
+        return;
+    }
+
+    // if we are at the start of the string, do nothing
+    if (m_richEditBox->TextDocument->Selection->StartPosition == 0)
+    {
+        return;
+    }
+
+    m_richEditBox->TextDocument->Selection->EndPosition = m_richEditBox->TextDocument->Selection->StartPosition;
+    m_richEditBox->TextDocument->Selection->StartPosition -= 1;
+    m_richEditBox->TextDocument->Selection->SetText(Windows::UI::Text::TextSetOptions::None, L"");
 }
 
 bool EquationTextBox::RichEditHasContent()

@@ -200,7 +200,7 @@ public
         BitflipButton = 1000,
         FullKeypadButton = 1001,
 
-        // Inequalities used in graphing calculator
+        // Inequalities. used in graphing calculator
         LessThan,
         LessThanOrEqualTo,
         GreaterThan,

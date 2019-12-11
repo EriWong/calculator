@@ -40,9 +40,9 @@ namespace CalculatorApp
         void SetTrigRowVisibility();
         void Button_Clicked(_In_ Platform::Object ^ sender, _In_ Windows::UI::Xaml::DependencyPropertyChangedEventArgs ^ e);
         void SubmitButton_Clicked(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
+        void ClearButton_Clicked(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
+        void BackSpaceButton_Clicked(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e);
 
         EquationInputArea ^ m_targetEIA;
-
-        //static const std::unordered_map<CalculatorApp::NumbersAndOperatorsEnum, std::pair<Platform::String ^, int>> buttonOutput;
     };
 }

@@ -431,6 +431,7 @@
                                                            ButtonId="Sin"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="sin"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="CosButton"
@@ -441,6 +442,7 @@
                                                            ButtonId="Cos"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="cos"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="TanButton"
@@ -451,6 +453,7 @@
                                                            ButtonId="Tan"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="tan"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="SecButton"
@@ -461,6 +464,7 @@
                                                            ButtonId="Sec"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="sec"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="CscButton"
@@ -472,6 +476,7 @@
                                                            ButtonId="Csc"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="csc"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="CotButton"
@@ -483,6 +488,7 @@
                                                            ButtonId="Cot"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="cot"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
                             </Grid>
 
@@ -508,6 +514,7 @@
                                                            ButtonId="InvSin"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="sin⁻¹"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="InvcosButton"
@@ -518,6 +525,7 @@
                                                            ButtonId="InvCos"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="cos⁻¹"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="InvtanButton"
@@ -528,6 +536,7 @@
                                                            ButtonId="InvTan"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="tan⁻¹"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="InvsecButton"
@@ -538,6 +547,7 @@
                                                            ButtonId="InvSec"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="sec⁻¹"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="InvcscButton"
@@ -549,6 +559,7 @@
                                                            ButtonId="InvCsc"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="csc⁻¹"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="InvcotButton"
@@ -560,6 +571,7 @@
                                                            ButtonId="InvCot"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="cot⁻¹"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
                             </Grid>
 
@@ -585,6 +597,7 @@
                                                            ButtonId="Sinh"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="sinh"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="CoshButton"
@@ -595,6 +608,7 @@
                                                            ButtonId="Cosh"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="cosh"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="TanhButton"
@@ -605,6 +619,7 @@
                                                            ButtonId="Tanh"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="tanh"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="SechButton"
@@ -615,6 +630,7 @@
                                                            ButtonId="Sech"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="sech"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="CschButton"
@@ -626,6 +642,7 @@
                                                            ButtonId="Csch"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="csch"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="CothButton"
@@ -637,6 +654,7 @@
                                                            ButtonId="Coth"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="coth"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
                             </Grid>
 
@@ -661,6 +679,7 @@
                                                            ButtonId="InvSinh"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="sinh⁻¹"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="InvcoshButton"
@@ -671,6 +690,7 @@
                                                            ButtonId="InvCosh"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="cosh⁻¹"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="InvtanhButton"
@@ -681,6 +701,7 @@
                                                            ButtonId="InvTanh"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="tanh⁻¹"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="InvsechButton"
@@ -691,6 +712,7 @@
                                                            ButtonId="InvSech"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="sech⁻¹"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="InvcschButton"
@@ -702,6 +724,7 @@
                                                            ButtonId="InvCsch"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="csch⁻¹"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
                                 <controls:CalculatorButton x:Name="InvcothButton"
@@ -713,6 +736,7 @@
                                                            ButtonId="InvCoth"
                                                            Click="FlyoutButton_Clicked"
                                                            Content="coth⁻¹"
+                                                           IsTabStop="false"
                                                            IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
                             </Grid>
                         </Grid>
@@ -755,6 +779,7 @@
                                                        ButtonId="LessThan"
                                                        Click="FlyoutButton_Clicked"
                                                        Content="&#xF88A;"
+                                                       IsTabStop="false"
                                                        IsEnabled="{x:Bind InequalityButton.IsEnabled, Mode=OneWay}"/>
 
                             <controls:CalculatorButton x:Name="LessThanOrEqualFlyoutButton"
@@ -765,6 +790,7 @@
                                                        ButtonId="LessThanOrEqualTo"
                                                        Click="FlyoutButton_Clicked"
                                                        Content="&#xF88B;"
+                                                       IsTabStop="false"
                                                        IsEnabled="{x:Bind InequalityButton.IsEnabled, Mode=OneWay}"/>
 
                             <controls:CalculatorButton x:Name="EqualsFlyoutButton"
@@ -775,6 +801,7 @@
                                                        ButtonId="Equals"
                                                        Click="FlyoutButton_Clicked"
                                                        Content="&#xE94E;"
+                                                       IsTabStop="false"
                                                        IsEnabled="{x:Bind InequalityButton.IsEnabled, Mode=OneWay}"/>
 
                             <controls:CalculatorButton x:Name="GreaterThanOrEqualFlyoutButton"
@@ -785,6 +812,7 @@
                                                        ButtonId="GreaterThanOrEqualTo"
                                                        Click="FlyoutButton_Clicked"
                                                        Content="&#xF88D;"
+                                                       IsTabStop="false"
                                                        IsEnabled="{x:Bind InequalityButton.IsEnabled, Mode=OneWay}"/>
 
                             <controls:CalculatorButton x:Name="GreaterThanFlyoutButton"
@@ -795,6 +823,7 @@
                                                        ButtonId="GreaterThan"
                                                        Click="FlyoutButton_Clicked"
                                                        Content="&#xF88C;"
+                                                       IsTabStop="false"
                                                        IsEnabled="{x:Bind InequalityButton.IsEnabled, Mode=OneWay}"/>
 
                         </Grid>
@@ -834,6 +863,7 @@
                                                        ButtonId="Abs"
                                                        Click="FlyoutButton_Clicked"
                                                        Content="&#xF884;"
+                                                       IsTabStop="false"
                                                        IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
 
                             <controls:CalculatorButton x:Name="FloorButton"
@@ -844,6 +874,7 @@
                                                        ButtonId="Floor"
                                                        Click="FlyoutButton_Clicked"
                                                        Content="&#xF885;"
+                                                       IsTabStop="false"
                                                        IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
 
                             <controls:CalculatorButton x:Name="CeilButton"
@@ -854,6 +885,7 @@
                                                        ButtonId="Ceil"
                                                        Click="FlyoutButton_Clicked"
                                                        Content="&#xF886;"
+                                                       IsTabStop="false"
                                                        IsEnabled="{x:Bind FuncButton.IsEnabled, Mode=OneWay}"/>
                         </Grid>
                     </Flyout>
@@ -882,7 +914,8 @@
                                    AutomationProperties.AutomationId="piButton"
                                    ButtonId="Pi"
                                    Click="Button_Clicked"
-                                   Content="&#xf7cf;"/>
+                                   Content="&#xf7cf;"
+                                   IsTabStop="false"/>
 
         <controls:CalculatorButton x:Name="EulerButton"
                                    x:Uid="eulerButton"
@@ -893,7 +926,8 @@
                                    AutomationProperties.AutomationId="eulerButton"
                                    ButtonId="Euler"
                                    Click="Button_Clicked"
-                                   Content="e"/>
+                                   Content="e"
+                                   IsTabStop="false"/>
         <Grid x:Name="DisplayControls"
               x:Uid="DisplayControls"
               Grid.Row="1"
@@ -913,7 +947,9 @@
                                        FontSize="16"
                                        AutomationProperties.AutomationId="clearButton"
                                        ButtonId="Clear"
-                                       Content="C"/>
+                                       Click="ClearButton_Clicked"
+                                       Content="C"
+                                       IsTabStop="false"/>
 
             <controls:CalculatorButton x:Name="BackSpaceButton"
                                        x:Uid="backSpaceButton"
@@ -923,7 +959,9 @@
                                        FontSize="16"
                                        AutomationProperties.AutomationId="backSpaceButton"
                                        ButtonId="Backspace"
-                                       Content="&#xE94F;"/>
+                                       Click="BackSpaceButton_Clicked"
+                                       Content="&#xE94F;"
+                                       IsTabStop="false"/>
         </Grid>
 
         <Grid x:Uid="ScientificFunctions"
@@ -947,7 +985,8 @@
                                            AutomationProperties.AutomationId="xpower2Button"
                                            ButtonId="XPower2"
                                            Click="Button_Clicked"
-                                           Content="&#xf7c8;"/>
+                                           Content="&#xf7c8;"
+                                           IsTabStop="false"/>
 
                 <controls:CalculatorButton x:Name="XPower3Button"
                                            x:Uid="xpower3Button"
@@ -956,7 +995,8 @@
                                            AutomationProperties.AutomationId="xpower3Button"
                                            ButtonId="Cube"
                                            Click="Button_Clicked"
-                                           Content="&#xf7cb;"/>
+                                           Content="&#xf7cb;"
+                                           IsTabStop="false"/>
 
                 <controls:CalculatorButton x:Name="PowerButton"
                                            x:Uid="powerButton"
@@ -965,7 +1005,8 @@
                                            AutomationProperties.AutomationId="powerButton"
                                            ButtonId="XPowerY"
                                            Click="Button_Clicked"
-                                           Content="&#xf7ca;"/>
+                                           Content="&#xf7ca;"
+                                           IsTabStop="false"/>
 
                 <controls:CalculatorButton x:Name="PowerOf10Button"
                                            x:Uid="powerOf10Button"
@@ -974,7 +1015,8 @@
                                            AutomationProperties.AutomationId="powerOf10Button"
                                            ButtonId="TenPowerX"
                                            Click="Button_Clicked"
-                                           Content="&#xF7CC;"/>
+                                           Content="&#xF7CC;"
+                                           IsTabStop="false"/>
 
                 <controls:CalculatorButton x:Name="LogBase10Button"
                                            x:Uid="logBase10Button"
@@ -983,7 +1025,8 @@
                                            AutomationProperties.AutomationId="logBase10Button"
                                            ButtonId="LogBase10"
                                            Click="Button_Clicked"
-                                           Content="log"/>
+                                           Content="log"
+                                           IsTabStop="false"/>
 
                 <controls:CalculatorButton x:Name="LogBaseEButton"
                                            x:Uid="logBaseEButton"
@@ -992,7 +1035,8 @@
                                            AutomationProperties.AutomationId="logBaseEButton"
                                            ButtonId="LogBaseE"
                                            Click="Button_Clicked"
-                                           Content="ln"/>
+                                           Content="ln"
+                                           IsTabStop="false"/>
             </Grid>
 
             <!-- Scientific INV Row 1 -->
@@ -1011,7 +1055,8 @@
                                            AutomationProperties.AutomationId="squareRootButton"
                                            ButtonId="Sqrt"
                                            Click="ShiftButton_Uncheck"
-                                           Content="&#xF899;"/>
+                                           Content="&#xF899;"
+                                           IsTabStop="false"/>
 
                 <controls:CalculatorButton x:Name="CubeRootButton"
                                            x:Uid="cubeRootButton"
@@ -1020,7 +1065,8 @@
                                            AutomationProperties.AutomationId="cubeRootButton"
                                            ButtonId="CubeRoot"
                                            Click="ShiftButton_Uncheck"
-                                           Content="&#xF881;"/>
+                                           Content="&#xF881;"
+                                           IsTabStop="false"/>
 
                 <controls:CalculatorButton x:Name="YSquareRootButton"
                                            x:Uid="ySquareRootButton"
@@ -1029,7 +1075,8 @@
                                            AutomationProperties.AutomationId="ySquareRootButton"
                                            ButtonId="YRootX"
                                            Click="ShiftButton_Uncheck"
-                                           Content="&#xf7cd;"/>
+                                           Content="&#xf7cd;"
+                                           IsTabStop="false"/>
 
                 <controls:CalculatorButton x:Name="TwoPowerXButton"
                                            x:Uid="twoPowerXButton"
@@ -1038,7 +1085,8 @@
                                            AutomationProperties.AutomationId="twoPowerXButton"
                                            ButtonId="TwoPowerX"
                                            Click="ShiftButton_Uncheck"
-                                           Content="&#xF882;"/>
+                                           Content="&#xF882;"
+                                           IsTabStop="false"/>
 
                 <controls:CalculatorButton x:Name="LogBaseX"
                                            x:Uid="logBaseX"
@@ -1047,7 +1095,8 @@
                                            AutomationProperties.AutomationId="logBaseX"
                                            ButtonId="LogBaseX"
                                            Click="ShiftButton_Uncheck"
-                                           Content="&#xF883;"/>
+                                           Content="&#xF883;"
+                                           IsTabStop="false"/>
 
                 <controls:CalculatorButton x:Name="PowerOfEButton"
                                            x:Uid="powerOfEButton"
@@ -1056,7 +1105,8 @@
                                            AutomationProperties.AutomationId="powerOfEButton"
                                            ButtonId="EPowerX"
                                            Click="ShiftButton_Uncheck"
-                                           Content="&#xf7ce;"/>
+                                           Content="&#xf7ce;"
+                                           IsTabStop="false"/>
             </Grid>
         </Grid>
         <!-- Scientific Row 2 -->
@@ -1077,7 +1127,8 @@
                                        AutomationProperties.AutomationId="invertButton"
                                        ButtonId="Invert"
                                        Click="Button_Clicked"
-                                       Content="&#xf7c9;"/>
+                                       Content="&#xf7c9;"
+                                       IsTabStop="false"/>
 
             <controls:CalculatorButton x:Name="AbsButton"
                                        x:Uid="absButton"
@@ -1086,7 +1137,8 @@
                                        AutomationProperties.AutomationId="absButton"
                                        ButtonId="Abs"
                                        Click="Button_Clicked"
-                                       Content="&#xF884;"/>
+                                       Content="&#xF884;"
+                                       IsTabStop="false"/>
 
             <controls:CalculatorButton x:Name="XButton"
                                        x:Uid="xButton"
@@ -1096,7 +1148,8 @@
                                        AutomationProperties.AutomationId="xButton"
                                        ButtonId="X"
                                        Click="Button_Clicked"
-                                       Content="𝑥"/>
+                                       Content="𝑥"
+                                       IsTabStop="false"/>
 
             <controls:CalculatorButton x:Name="YButton"
                                        x:Uid="yButton"
@@ -1106,7 +1159,8 @@
                                        AutomationProperties.AutomationId="yButton"
                                        ButtonId="Y"
                                        Click="Button_Clicked"
-                                       Content="𝑦"/>
+                                       Content="𝑦"
+                                       IsTabStop="false"/>
         </Grid>
 
         <controls:CalculatorButton x:Name="OpenParenthesisButton"
@@ -1118,7 +1172,8 @@
                                    AutomationProperties.AutomationId="openParenthesisButton"
                                    ButtonId="OpenParenthesis"
                                    Click="Button_Clicked"
-                                   Content="("/>
+                                   Content="("
+                                   IsTabStop="false"/>
 
         <controls:CalculatorButton x:Name="CloseParenthesisButton"
                                    x:Uid="closeParenthesisButton"
@@ -1129,7 +1184,8 @@
                                    AutomationProperties.AutomationId="closeParenthesisButton"
                                    ButtonId="CloseParenthesis"
                                    Click="Button_Clicked"
-                                   Content=")"/>
+                                   Content=")"
+                                   IsTabStop="false"/>
 
         <controls:CalculatorButton x:Name="EqualButton"
                                    x:Uid="equalButton"
@@ -1139,7 +1195,8 @@
                                    AutomationProperties.AutomationId="equalButton"
                                    ButtonId="Equals"
                                    Click="Button_Clicked"
-                                   Content="&#xE94E;"/>
+                                   Content="&#xE94E;"
+                                   IsTabStop="false"/>
 
         <Grid x:Name="StandardOperators"
               x:Uid="StandardOperators"
@@ -1161,7 +1218,8 @@
                                        AutomationProperties.AutomationId="divideButton"
                                        ButtonId="Divide"
                                        Click="Button_Clicked"
-                                       Content="&#xE94A;"/>
+                                       Content="&#xE94A;"
+                                       IsTabStop="false"/>
 
             <controls:CalculatorButton x:Name="MultiplyButton"
                                        x:Uid="multiplyButton"
@@ -1170,7 +1228,8 @@
                                        AutomationProperties.AutomationId="multiplyButton"
                                        ButtonId="Multiply"
                                        Click="Button_Clicked"
-                                       Content="&#xE947;"/>
+                                       Content="&#xE947;"
+                                       IsTabStop="false"/>
 
             <controls:CalculatorButton x:Name="MinusButton"
                                        x:Uid="minusButton"
@@ -1179,7 +1238,8 @@
                                        AutomationProperties.AutomationId="minusButton"
                                        ButtonId="Subtract"
                                        Click="Button_Clicked"
-                                       Content="&#xE949;"/>
+                                       Content="&#xE949;"
+                                       IsTabStop="false"/>
 
             <controls:CalculatorButton x:Name="PlusButton"
                                        x:Uid="plusButton"
@@ -1188,7 +1248,8 @@
                                        AutomationProperties.AutomationId="plusButton"
                                        ButtonId="Add"
                                        Click="Button_Clicked"
-                                       Content="&#xE948;"/>
+                                       Content="&#xE948;"
+                                       IsTabStop="false"/>
 
             <controls:CalculatorButton x:Name="SubmitButton"
                                        x:Uid="submitButton"
@@ -1197,7 +1258,8 @@
                                        FontFamily="{StaticResource SymbolThemeFontFamily}"
                                        AutomationProperties.AutomationId="submitButton"
                                        Click="SubmitButton_Clicked"
-                                       Content="&#xE751;"/>
+                                       Content="&#xE751;"
+                                       IsTabStop="false"/>
         </Grid>
 
         <controls:CalculatorButton x:Name="NegateButton"
@@ -1210,15 +1272,107 @@
                                    AutomationProperties.AutomationId="negateButton"
                                    ButtonId="Negate"
                                    Click="Button_Clicked"
-                                   Content="&#xF898;"/>
+                                   Content="&#xF898;"
+                                   IsTabStop="false"/>
 
-        <!--<local:NumberPad x:Name="NumberPad"
-                         x:Uid="NumberPad"
-                         Grid.Row="4"
-                         Grid.RowSpan="4"
-                         Grid.Column="1"
-                         Grid.ColumnSpan="3"
-                         AutomationProperties.HeadingLevel="Level1"
-                         ButtonStyle="{StaticResource NumericButtonStyle24}"/>-->
+        <controls:CalculatorButton x:Name="Num0Button"
+                                   x:Uid="num0Button"
+                                   Grid.Row="7"
+                                   Grid.Column="2"
+                                   Style="{StaticResource NumericButtonStyle24}"
+                                   AutomationProperties.AutomationId="num0Button"
+                                   ButtonId="Zero"
+                                   Click="Button_Clicked"
+                                   IsTabStop="false"/>
+        <controls:CalculatorButton x:Name="Num1Button"
+                                   x:Uid="num1Button"
+                                   Grid.Row="6"
+                                   Grid.Column="1"
+                                   Style="{StaticResource NumericButtonStyle24}"
+                                   AutomationProperties.AutomationId="num1Button"
+                                   ButtonId="One"
+                                   Click="Button_Clicked"
+                                   IsTabStop="false"/>
+        <controls:CalculatorButton x:Name="Num2Button"
+                                   x:Uid="num2Button"
+                                   Grid.Row="6"
+                                   Grid.Column="2"
+                                   Style="{StaticResource NumericButtonStyle24}"
+                                   AutomationProperties.AutomationId="num2Button"
+                                   ButtonId="Two"
+                                   Click="Button_Clicked"
+                                   IsTabStop="false"/>
+        <controls:CalculatorButton x:Name="Num3Button"
+                                   x:Uid="num3Button"
+                                   Grid.Row="6"
+                                   Grid.Column="3"
+                                   Style="{StaticResource NumericButtonStyle24}"
+                                   AutomationProperties.AutomationId="num3Button"
+                                   ButtonId="Three"
+                                   Click="Button_Clicked"
+                                   IsTabStop="false"/>
+        <controls:CalculatorButton x:Name="Num4Button"
+                                   x:Uid="num4Button"
+                                   Grid.Row="5"
+                                   Grid.Column="1"
+                                   Style="{StaticResource NumericButtonStyle24}"
+                                   AutomationProperties.AutomationId="num4Button"
+                                   ButtonId="Four"
+                                   Click="Button_Clicked"
+                                   IsTabStop="false"/>
+        <controls:CalculatorButton x:Name="Num5Button"
+                                   x:Uid="num5Button"
+                                   Grid.Row="5"
+                                   Grid.Column="2"
+                                   Style="{StaticResource NumericButtonStyle24}"
+                                   AutomationProperties.AutomationId="num5Button"
+                                   ButtonId="Five"
+                                   Click="Button_Clicked"
+                                   IsTabStop="false"/>
+        <controls:CalculatorButton x:Name="Num6Button"
+                                   x:Uid="num6Button"
+                                   Grid.Row="5"
+                                   Grid.Column="3"
+                                   Style="{StaticResource NumericButtonStyle24}"
+                                   AutomationProperties.AutomationId="num6Button"
+                                   ButtonId="Six"
+                                   Click="Button_Clicked"
+                                   IsTabStop="false"/>
+        <controls:CalculatorButton x:Name="Num7Button"
+                                   x:Uid="num7Button"
+                                   Grid.Row="4"
+                                   Grid.Column="1"
+                                   Style="{StaticResource NumericButtonStyle24}"
+                                   AutomationProperties.AutomationId="num7Button"
+                                   ButtonId="Seven"
+                                   Click="Button_Clicked"
+                                   IsTabStop="false"/>
+        <controls:CalculatorButton x:Name="Num8Button"
+                                   x:Uid="num8Button"
+                                   Grid.Row="4"
+                                   Grid.Column="2"
+                                   Style="{StaticResource NumericButtonStyle24}"
+                                   AutomationProperties.AutomationId="num8Button"
+                                   ButtonId="Eight"
+                                   Click="Button_Clicked"
+                                   IsTabStop="false"/>
+        <controls:CalculatorButton x:Name="Num9Button"
+                                   x:Uid="num9Button"
+                                   Grid.Row="4"
+                                   Grid.Column="3"
+                                   Style="{StaticResource NumericButtonStyle24}"
+                                   AutomationProperties.AutomationId="num9Button"
+                                   ButtonId="Nine"
+                                   Click="Button_Clicked"
+                                   IsTabStop="false"/>
+        <controls:CalculatorButton x:Name="DecimalSeparatorButton"
+                                   x:Uid="decimalSeparatorButton"
+                                   Grid.Row="7"
+                                   Grid.Column="3"
+                                   Style="{StaticResource NumericButtonStyle24}"
+                                   AutomationProperties.AutomationId="decimalSeparatorButton"
+                                   ButtonId="Decimal"
+                                   Click="Button_Clicked"
+                                   IsTabStop="false"/>
     </Grid>
 </UserControl>

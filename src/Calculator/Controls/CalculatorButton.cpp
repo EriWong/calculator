@@ -29,9 +29,6 @@ CalculatorButton::CalculatorButton()
     Binding ^ commandBinding = ref new Binding();
     commandBinding->Path = ref new PropertyPath("ButtonPressed");
     this->SetBinding(Button::CommandProperty, commandBinding);
-
-    // turn off tab navigation to this control.
-    IsTabStop = false;
 }
 
 void CalculatorButton::OnKeyDown(KeyRoutedEventArgs ^ e)
