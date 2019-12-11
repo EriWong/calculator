@@ -358,7 +358,8 @@
                                           x:Uid="trigButton"
                                           Style="{StaticResource OperatorPanelButtonStyle}"
                                           AutomationProperties.AutomationId="trigButton"
-                                          Glyph="&#xF892;">
+                                          Glyph="&#xF892;"
+                                          IsTabStop="false">
 
                 <controls:OperatorPanelButton.FlyoutMenu>
                     <Flyout x:Name="Trigflyout"
@@ -392,6 +393,7 @@
                                           AutomationProperties.AutomationId="trigShiftButton"
                                           Checked="TrigFlyoutShift_Toggle"
                                           Content="&#xF897;"
+                                          IsTabStop="false"
                                           Unchecked="TrigFlyoutShift_Toggle"
                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
@@ -403,6 +405,7 @@
                                           Checked="TrigFlyoutHyp_Toggle"
                                           Content="hyp"
                                           IsEnabledChanged="ShiftButton_IsEnabledChanged"
+                                          IsTabStop="false"
                                           Unchecked="TrigFlyoutHyp_Toggle"
                                           IsEnabled="{x:Bind TrigButton.IsEnabled, Mode=OneWay}"/>
 
@@ -721,7 +724,8 @@
                                           x:Uid="inequalityButton"
                                           Style="{StaticResource OperatorPanelButtonStyle}"
                                           AutomationProperties.AutomationId="inequalityButton"
-                                          Glyph="&#xF894;">
+                                          Glyph="&#xF894;"
+                                          IsTabStop="false">
                 <controls:OperatorPanelButton.FlyoutMenu>
 
                     <Flyout x:Name="InequalityFlyout"
@@ -748,6 +752,7 @@
                                                        x:Uid="lessThanFlyoutButton"
                                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="lessThanFlyoutButton"
+                                                       ButtonId="LessThan"
                                                        Click="FlyoutButton_Clicked"
                                                        Content="&#xF88A;"
                                                        IsEnabled="{x:Bind InequalityButton.IsEnabled, Mode=OneWay}"/>
@@ -757,6 +762,7 @@
                                                        Grid.Column="1"
                                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="lessThanOrEqualFlyoutButton"
+                                                       ButtonId="LessThanOrEqualTo"
                                                        Click="FlyoutButton_Clicked"
                                                        Content="&#xF88B;"
                                                        IsEnabled="{x:Bind InequalityButton.IsEnabled, Mode=OneWay}"/>
@@ -766,6 +772,7 @@
                                                        Grid.Column="2"
                                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="equalsFlyoutButton"
+                                                       ButtonId="Equals"
                                                        Click="FlyoutButton_Clicked"
                                                        Content="&#xE94E;"
                                                        IsEnabled="{x:Bind InequalityButton.IsEnabled, Mode=OneWay}"/>
@@ -775,6 +782,7 @@
                                                        Grid.Column="3"
                                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="greaterThanOrEqualFlyoutButton"
+                                                       ButtonId="GreaterThanOrEqualTo"
                                                        Click="FlyoutButton_Clicked"
                                                        Content="&#xF88D;"
                                                        IsEnabled="{x:Bind InequalityButton.IsEnabled, Mode=OneWay}"/>
@@ -784,6 +792,7 @@
                                                        Grid.Column="4"
                                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                                        AutomationProperties.AutomationId="greaterThanFlyoutButton"
+                                                       ButtonId="GreaterThan"
                                                        Click="FlyoutButton_Clicked"
                                                        Content="&#xF88C;"
                                                        IsEnabled="{x:Bind InequalityButton.IsEnabled, Mode=OneWay}"/>
@@ -797,7 +806,8 @@
                                           x:Uid="funcButton"
                                           Style="{StaticResource OperatorPanelButtonStyle}"
                                           AutomationProperties.AutomationId="funcButton"
-                                          Glyph="&#xF893;">
+                                          Glyph="&#xF893;"
+                                          IsTabStop="false">
 
                 <controls:OperatorPanelButton.FlyoutMenu>
                     <Flyout x:Name="FuncFlyout"
@@ -1202,13 +1212,13 @@
                                    Click="Button_Clicked"
                                    Content="&#xF898;"/>
 
-        <local:NumberPad x:Name="NumberPad"
+        <!--<local:NumberPad x:Name="NumberPad"
                          x:Uid="NumberPad"
                          Grid.Row="4"
                          Grid.RowSpan="4"
                          Grid.Column="1"
                          Grid.ColumnSpan="3"
                          AutomationProperties.HeadingLevel="Level1"
-                         ButtonStyle="{StaticResource NumericButtonStyle24}"/>
+                         ButtonStyle="{StaticResource NumericButtonStyle24}"/>-->
     </Grid>
 </UserControl>

@@ -345,24 +345,9 @@ void EquationTextBox::SetEquationText(Platform::String ^ equationText)
 
 void EquationTextBox::InsertText(Platform::String ^ text, int cursorOffSet)
 {
-    //// the following indices are with respect to the text variable, but NOT the TextBox.Text property!
-    // int currentSelectionStart = box.SelectionStart;
-    // int currentSelectionLength = box.SelectionLength;
-
-    //// if text is selected, delete it
-    // if (currentSelectionLength != 0)
-    //    text = text.Remove(currentSelectionStart, currentSelectionLength);
-
-    //// insert the new character
-    // box.Text = text.Insert(currentSelectionStart, (string)arg);
-    // box.SelectionLength = 0;
-    // box.SelectionStart = currentSelectionStart + 1; // move the cursor to behind the new character(s in case of return)
-
-    // Insert text at the current cursor location
-    // auto s_start = m_richEditBox->TextDocument->Selection->StartPosition;
-    // auto s_len = m_richEditBox->TextDocument->Selection->Length;
-    // auto s_end = m_richEditBox->TextDocument->Selection->EndPosition;
-
+    // If the rich edit is empty, the math zone may not exist, and so selection (and thus the resulting text) will not be in a math zone.
+    // If the rich edit has content already, then the mathzone will already be created due to mathonly mode being set and the selection will exist inside the math zone.
+    // To handle this, we will force a math zone to be created in teh case of the text being empty and then replacing the text inside of the math zone with the newly inserted text.
     if (m_richEditBox->MathText == nullptr)
     {
         m_richEditBox->MathText = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi></math>";
@@ -370,25 +355,12 @@ void EquationTextBox::InsertText(Platform::String ^ text, int cursorOffSet)
         m_richEditBox->TextDocument->Selection->EndPosition = 1;
     }
 
+    // insert the text in place of selection
     m_richEditBox->TextDocument->Selection->SetText(Windows::UI::Text::TextSetOptions::FormatRtf, text);
 
+    // Move the cursor to the next logical place for users to enter text.
     m_richEditBox->TextDocument->Selection->StartPosition += cursorOffSet;
     m_richEditBox->TextDocument->Selection->EndPosition = m_richEditBox->TextDocument->Selection->StartPosition;
-
-    // String ^ currentText = GetText();
-    // std::wstring _text = currentText->Data();
-    // if (s_len > 0)
-    //{
-    //    // Delete the current selection
-    //    _text.erase(s_start, s_len);
-    //}
-
-    //_text.insert(s_start, text->Data());
-
-    // String ^ newText = ref new Platform::String(_text.c_str());
-    // SetText(newText);
-    // m_richEditBox->TextDocument->Selection->StartPosition += 1;
-    // m_richEditBox->TextDocument->Selection->EndPosition = m_richEditBox->TextDocument->Selection->StartPosition;
 }
 
 void EquationTextBox::SubmitEq()
