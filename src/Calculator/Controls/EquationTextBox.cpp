@@ -371,8 +371,8 @@ void EquationTextBox::SubmitEquation()
 
 void EquationTextBox::BackSpace()
 {
-    // if anything is selected, just delete the selection
-    if (m_richEditBox->TextDocument->Selection->Length > 0)
+    // if anything is selected, just delete the selection.  Note: EndPosition can be before start position.
+    if (m_richEditBox->TextDocument->Selection->StartPosition != m_richEditBox->TextDocument->Selection->EndPosition)
     {
         m_richEditBox->TextDocument->Selection->SetText(Windows::UI::Text::TextSetOptions::None, L"");
         return;
@@ -384,9 +384,17 @@ void EquationTextBox::BackSpace()
         return;
     }
 
+    // Select the previous group.
     m_richEditBox->TextDocument->Selection->EndPosition = m_richEditBox->TextDocument->Selection->StartPosition;
     m_richEditBox->TextDocument->Selection->StartPosition -= 1;
-    m_richEditBox->TextDocument->Selection->SetText(Windows::UI::Text::TextSetOptions::None, L"");
+
+    // If the group contains anything complex, we want to give the user a chance to preview the deletion.
+    // If it's a single character, then just delete it.  Otherwise do nothing until the user triggers backspace again.
+    auto text = m_richEditBox->TextDocument->Selection->Text;
+    if (text->Length() == 1)
+    {
+        m_richEditBox->TextDocument->Selection->SetText(Windows::UI::Text::TextSetOptions::None, L"");
+    }
 }
 
 bool EquationTextBox::RichEditHasContent()
