@@ -871,6 +871,7 @@
                                    FontSize="14"
                                    AutomationProperties.AutomationId="piButton"
                                    ButtonId="Pi"
+                                   Click="Button_Clicked"
                                    Content="&#xf7cf;"/>
 
         <controls:CalculatorButton x:Name="EulerButton"
@@ -881,6 +882,7 @@
                                    FontSize="14"
                                    AutomationProperties.AutomationId="eulerButton"
                                    ButtonId="Euler"
+                                   Click="Button_Clicked"
                                    Content="e"/>
         <Grid x:Name="DisplayControls"
               x:Uid="DisplayControls"
@@ -934,6 +936,7 @@
                                            Style="{StaticResource SymbolOperatorButtonStyle}"
                                            AutomationProperties.AutomationId="xpower2Button"
                                            ButtonId="XPower2"
+                                           Click="Button_Clicked"
                                            Content="&#xf7c8;"/>
 
                 <controls:CalculatorButton x:Name="XPower3Button"
@@ -942,6 +945,7 @@
                                            Style="{StaticResource SymbolOperatorButtonStyle}"
                                            AutomationProperties.AutomationId="xpower3Button"
                                            ButtonId="Cube"
+                                           Click="Button_Clicked"
                                            Content="&#xf7cb;"/>
 
                 <controls:CalculatorButton x:Name="PowerButton"
@@ -950,6 +954,7 @@
                                            Style="{StaticResource SymbolOperatorButtonStyle}"
                                            AutomationProperties.AutomationId="powerButton"
                                            ButtonId="XPowerY"
+                                           Click="Button_Clicked"
                                            Content="&#xf7ca;"/>
 
                 <controls:CalculatorButton x:Name="PowerOf10Button"
@@ -958,6 +963,7 @@
                                            Style="{StaticResource SymbolOperatorButtonStyle}"
                                            AutomationProperties.AutomationId="powerOf10Button"
                                            ButtonId="TenPowerX"
+                                           Click="Button_Clicked"
                                            Content="&#xF7CC;"/>
 
                 <controls:CalculatorButton x:Name="LogBase10Button"
@@ -966,6 +972,7 @@
                                            Style="{StaticResource OperatorButtonStyle}"
                                            AutomationProperties.AutomationId="logBase10Button"
                                            ButtonId="LogBase10"
+                                           Click="Button_Clicked"
                                            Content="log"/>
 
                 <controls:CalculatorButton x:Name="LogBaseEButton"
@@ -974,6 +981,7 @@
                                            Style="{StaticResource OperatorButtonStyle}"
                                            AutomationProperties.AutomationId="logBaseEButton"
                                            ButtonId="LogBaseE"
+                                           Click="Button_Clicked"
                                            Content="ln"/>
             </Grid>
 
@@ -1058,6 +1066,7 @@
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="invertButton"
                                        ButtonId="Invert"
+                                       Click="Button_Clicked"
                                        Content="&#xf7c9;"/>
 
             <controls:CalculatorButton x:Name="AbsButton"
@@ -1066,6 +1075,7 @@
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="absButton"
                                        ButtonId="Abs"
+                                       Click="Button_Clicked"
                                        Content="&#xF884;"/>
 
             <controls:CalculatorButton x:Name="XButton"
@@ -1075,6 +1085,7 @@
                                        FontSize="16"
                                        AutomationProperties.AutomationId="xButton"
                                        ButtonId="X"
+                                       Click="Button_Clicked"
                                        Content="𝑥"/>
 
             <controls:CalculatorButton x:Name="YButton"
@@ -1084,6 +1095,7 @@
                                        FontSize="16"
                                        AutomationProperties.AutomationId="yButton"
                                        ButtonId="Y"
+                                       Click="Button_Clicked"
                                        Content="𝑦"/>
         </Grid>
 
@@ -1095,6 +1107,7 @@
                                    FontSize="19"
                                    AutomationProperties.AutomationId="openParenthesisButton"
                                    ButtonId="OpenParenthesis"
+                                   Click="Button_Clicked"
                                    Content="("/>
 
         <controls:CalculatorButton x:Name="CloseParenthesisButton"
@@ -1105,6 +1118,7 @@
                                    FontSize="19"
                                    AutomationProperties.AutomationId="closeParenthesisButton"
                                    ButtonId="CloseParenthesis"
+                                   Click="Button_Clicked"
                                    Content=")"/>
 
         <controls:CalculatorButton x:Name="EqualButton"
@@ -1114,6 +1128,7 @@
                                    Style="{StaticResource SymbolOperatorButtonStyle}"
                                    AutomationProperties.AutomationId="equalButton"
                                    ButtonId="Equals"
+                                   Click="Button_Clicked"
                                    Content="&#xE94E;"/>
 
         <Grid x:Name="StandardOperators"
@@ -1135,6 +1150,7 @@
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="divideButton"
                                        ButtonId="Divide"
+                                       Click="Button_Clicked"
                                        Content="&#xE94A;"/>
 
             <controls:CalculatorButton x:Name="MultiplyButton"
@@ -1143,6 +1159,7 @@
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="multiplyButton"
                                        ButtonId="Multiply"
+                                       Click="Button_Clicked"
                                        Content="&#xE947;"/>
 
             <controls:CalculatorButton x:Name="MinusButton"
@@ -1151,6 +1168,7 @@
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="minusButton"
                                        ButtonId="Subtract"
+                                       Click="Button_Clicked"
                                        Content="&#xE949;"/>
 
             <controls:CalculatorButton x:Name="PlusButton"
@@ -1159,6 +1177,7 @@
                                        Style="{StaticResource SymbolOperatorButtonStyle}"
                                        AutomationProperties.AutomationId="plusButton"
                                        ButtonId="Add"
+                                       Click="Button_Clicked"
                                        Content="&#xE948;"/>
 
             <controls:CalculatorButton x:Name="SubmitButton"
@@ -1167,7 +1186,7 @@
                                        Style="{StaticResource AccentEmphasizedCalcButtonStyle}"
                                        FontFamily="{StaticResource SymbolThemeFontFamily}"
                                        AutomationProperties.AutomationId="submitButton"
-                                       ButtonId="Submit"
+                                       Click="SubmitButton_Clicked"
                                        Content="&#xE751;"/>
         </Grid>
 
@@ -1180,6 +1199,7 @@
                                    FontWeight="Normal"
                                    AutomationProperties.AutomationId="negateButton"
                                    ButtonId="Negate"
+                                   Click="Button_Clicked"
                                    Content="&#xF898;"/>
 
         <local:NumberPad x:Name="NumberPad"

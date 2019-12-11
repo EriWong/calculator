@@ -55,17 +55,17 @@ void EquationTextBox::OnApplyTemplate()
     {
         m_equationButton->Click += ref new RoutedEventHandler(this, &EquationTextBox::OnEquationButtonClicked);
 
-         auto toolTip = ref new ToolTip();
-         auto equationButtonMessage = m_equationButton->IsChecked->Value ? resProvider->GetResourceString(L"showEquationButtonToolTip") : resProvider->GetResourceString(L"hideEquationButtonToolTip");
-         toolTip->Content = equationButtonMessage;
-         ToolTipService::SetToolTip(m_equationButton, toolTip);
-         AutomationProperties::SetName(m_equationButton, equationButtonMessage);
+        auto toolTip = ref new ToolTip();
+        auto equationButtonMessage = m_equationButton->IsChecked->Value ? resProvider->GetResourceString(L"showEquationButtonToolTip")
+                                                                        : resProvider->GetResourceString(L"hideEquationButtonToolTip");
+        toolTip->Content = equationButtonMessage;
+        ToolTipService::SetToolTip(m_equationButton, toolTip);
+        AutomationProperties::SetName(m_equationButton, equationButtonMessage);
     }
 
     if (m_richEditContextMenu != nullptr)
     {
-        m_richEditContextMenu->Opening +=
-            ref new Windows::Foundation::EventHandler<Platform::Object ^>(this, &EquationTextBox::OnRichEditMenuOpening);
+        m_richEditContextMenu->Opening += ref new Windows::Foundation::EventHandler<Platform::Object ^>(this, &EquationTextBox::OnRichEditMenuOpening);
     }
 
     if (m_kgfEquationButton != nullptr)
@@ -223,7 +223,8 @@ void EquationTextBox::OnEquationButtonClicked(Object ^ sender, RoutedEventArgs ^
 
     auto toolTip = ref new ToolTip();
     auto resProvider = AppResourceProvider::GetInstance();
-    auto equationButtonMessage = m_equationButton->IsChecked->Value ? resProvider->GetResourceString(L"showEquationButtonToolTip") : resProvider->GetResourceString(L"hideEquationButtonToolTip");
+    auto equationButtonMessage = m_equationButton->IsChecked->Value ? resProvider->GetResourceString(L"showEquationButtonToolTip")
+                                                                    : resProvider->GetResourceString(L"hideEquationButtonToolTip");
     toolTip->Content = equationButtonMessage;
     ToolTipService::SetToolTip(m_equationButton, toolTip);
     AutomationProperties::SetName(m_equationButton, equationButtonMessage);
@@ -358,15 +359,25 @@ void EquationTextBox::InsertText(Platform::String ^ text, int cursorOffSet)
     // box.SelectionStart = currentSelectionStart + 1; // move the cursor to behind the new character(s in case of return)
 
     // Insert text at the current cursor location
-    //auto s_start = m_richEditBox->TextDocument->Selection->StartPosition;
-    //auto s_len = m_richEditBox->TextDocument->Selection->Length;
+    // auto s_start = m_richEditBox->TextDocument->Selection->StartPosition;
+    // auto s_len = m_richEditBox->TextDocument->Selection->Length;
     // auto s_end = m_richEditBox->TextDocument->Selection->EndPosition;
 
-    m_richEditBox->TextDocument->Selection->SetText(Windows::UI::Text::TextSetOptions::None, text);
+    if (m_richEditBox->MathText == nullptr)
+    {
+        m_richEditBox->MathText = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi></math>";
+        m_richEditBox->TextDocument->Selection->StartPosition = 0;
+        m_richEditBox->TextDocument->Selection->EndPosition = 1;
+    }
 
-    //String ^ currentText = GetText();
-    //std::wstring _text = currentText->Data();
-    //if (s_len > 0)
+    m_richEditBox->TextDocument->Selection->SetText(Windows::UI::Text::TextSetOptions::FormatRtf, text);
+
+    m_richEditBox->TextDocument->Selection->StartPosition += cursorOffSet;
+    m_richEditBox->TextDocument->Selection->EndPosition = m_richEditBox->TextDocument->Selection->StartPosition;
+
+    // String ^ currentText = GetText();
+    // std::wstring _text = currentText->Data();
+    // if (s_len > 0)
     //{
     //    // Delete the current selection
     //    _text.erase(s_start, s_len);
@@ -374,10 +385,15 @@ void EquationTextBox::InsertText(Platform::String ^ text, int cursorOffSet)
 
     //_text.insert(s_start, text->Data());
 
-    //String ^ newText = ref new Platform::String(_text.c_str());
-    //SetText(newText);
-    //m_richEditBox->TextDocument->Selection->StartPosition += 1;
-    //m_richEditBox->TextDocument->Selection->EndPosition = m_richEditBox->TextDocument->Selection->StartPosition;
+    // String ^ newText = ref new Platform::String(_text.c_str());
+    // SetText(newText);
+    // m_richEditBox->TextDocument->Selection->StartPosition += 1;
+    // m_richEditBox->TextDocument->Selection->EndPosition = m_richEditBox->TextDocument->Selection->StartPosition;
+}
+
+void EquationTextBox::SubmitEq()
+{
+    EquationSubmitted(this, ref new RoutedEventArgs());
 }
 
 bool EquationTextBox::RichEditHasContent()

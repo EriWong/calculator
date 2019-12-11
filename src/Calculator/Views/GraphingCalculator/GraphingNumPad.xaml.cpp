@@ -29,11 +29,12 @@ void GraphingNumPad::ShiftButton_Check(_In_ Platform::Object ^ /*sender*/, _In_ 
     SetOperatorRowVisibility();
 }
 
-void GraphingNumPad::ShiftButton_Uncheck(_In_ Platform::Object ^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs ^ /*e*/)
+void GraphingNumPad::ShiftButton_Uncheck(_In_ Platform::Object ^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs ^ /*e*/)
 {
     ShiftButton->IsChecked = false;
     SetOperatorRowVisibility();
-    ShiftButton->Focus(::FocusState::Programmatic);
+    
+    GraphingNumPad::Button_Clicked(sender, nullptr);
 }
 
 void GraphingNumPad::TrigFlyoutShift_Toggle(_In_ Platform::Object ^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs ^ /*e*/)
@@ -46,13 +47,15 @@ void GraphingNumPad::TrigFlyoutHyp_Toggle(_In_ Platform::Object ^ /*sender*/, _I
     SetTrigRowVisibility();
 }
 
-void GraphingNumPad::FlyoutButton_Clicked(_In_ Platform::Object ^ /*sender*/, _In_ Windows::UI::Xaml::RoutedEventArgs ^ /*e*/)
+void GraphingNumPad::FlyoutButton_Clicked(_In_ Platform::Object ^ sender, _In_ Windows::UI::Xaml::RoutedEventArgs ^ /*e*/)
 {
     this->HypButton->IsChecked = false;
     this->TrigShiftButton->IsChecked = false;
     this->Trigflyout->Hide();
     this->FuncFlyout->Hide();
     this->InequalityFlyout->Hide();
+
+    GraphingNumPad::Button_Clicked(sender, nullptr);
 }
 
 void GraphingNumPad::ShiftButton_IsEnabledChanged(_In_ Platform::Object ^ /*sender*/, _In_ Windows::UI::Xaml::DependencyPropertyChangedEventArgs ^ /*e*/)
@@ -88,10 +91,12 @@ void GraphingNumPad::SetTrigRowVisibility()
     }
 }
 
-void CalculatorApp::GraphingNumPad::Button_Clicked(Platform::Object ^ sender, Windows::UI::Xaml::DependencyPropertyChangedEventArgs ^ e)
+void GraphingNumPad::Button_Clicked(Platform::Object ^ sender, Windows::UI::Xaml::DependencyPropertyChangedEventArgs ^ /*e*/)
 {
     auto button = dynamic_cast<CalculatorApp::Controls::CalculatorButton^>(sender);
-    
+    auto id = button->ButtonId;
+    auto output = buttonOutput.find(id);
+    m_targetEIA->ETB->InsertText(output->second.first, output->second.second);
 }
 
 void GraphingNumPad::SetOperatorRowVisibility()
@@ -110,4 +115,9 @@ void GraphingNumPad::SetOperatorRowVisibility()
 
     Row1->Visibility = rowVis;
     InvRow1->Visibility = invRowVis;
+}
+
+void CalculatorApp::GraphingNumPad::SubmitButton_Clicked(Platform::Object ^ sender, Windows::UI::Xaml::RoutedEventArgs ^ e)
+{
+    m_targetEIA->ETB->SubmitEq();
 }

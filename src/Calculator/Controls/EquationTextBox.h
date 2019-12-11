@@ -35,6 +35,7 @@ namespace CalculatorApp
             void SetEquationText(Platform::String^ equationText);
 
             void InsertText(Platform::String ^ text, int cursorOffSet);
+            void SubmitEq();
 
         protected:
             virtual void OnApplyTemplate() override;
